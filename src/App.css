@@ -1,14 +1,9 @@
-.App {
-  text-align: center;
-}
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
+
+
 
 @media (prefers-reduced-motion: no-preference) {
-  .App-logo {
+  #App-logo {
     animation: App-logo-spin infinite 20s linear;
   }
 }
@@ -35,4 +30,63 @@
   to {
     transform: rotate(360deg);
   }
+}
+#menu p{
+  font-size: 11px;
+  
+}
+#menu ul{
+ 
+  font-size: 15px;
+margin-top: 1rem;
+margin-bottom: 1rem;
+
+
+}
+#menu li {
+  display: flex;
+  align-items: center;
+  margin-top: 0.5rem;
+}
+#menu span{
+  color: blue;
+  font-size: 20px;
+  margin-right: 1rem;
+}
+#menu li:hover{
+  cursor: pointer;
+  background-color: #b3e0ec;
+}
+.dashborad{
+  box-shadow: 2px  2px 4px grey;
+  width: 16rem;
+  height: 8rem;
+  padding: 1vw;
+  border-radius: 10px;
+  margin: 4vw 0vw 4vw 2vw;
+}
+.dashborad p{
+  margin-bottom: 1rem;
+display: flex;
+align-items: center;
+justify-content: space-between;
+}
+.user{
+  width: 80vw;
+  padding: 4vw;
+}
+.btn{
+  border: 1px dotted blue;
+  margin-right: 1vw;
+  color: green;
+  width: 4.5vw;
+  height: 3vw;
+}
+.bt{
+  border: 1px dotted red;
+  margin-right: 1vw;
+  color: red;
+  width: 5vw;
+  
+  height: 3vw;
 }
