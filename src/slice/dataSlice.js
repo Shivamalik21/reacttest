@@ -9,7 +9,7 @@ const initialState = {
   
 };
 
-console.log(initialState.user[0].user)
+localStorage.setItem("data",initialState.user[0].user)
 const dataSlice = createSlice({
   name: "user",
   initialState,
@@ -20,9 +20,9 @@ const dataSlice = createSlice({
     },
     setuser: (state, action) => {
      
-      state.user[0].user=[...state.user[0].user,{action}]
-
-
+     state.user[0].user.unshift(action.payload)
+console.log(action.payload)
+console.log(state.data)
     },
     
   },

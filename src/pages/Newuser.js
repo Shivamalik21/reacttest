@@ -45,8 +45,8 @@ upload_file
   alert("fill right input")
  }else{
    dispatch(setuser({name:username.current.value,
+    email:email.current.value,
     age:age.current.value,
-    email:email.current.value
   }))
  }
 })}>Submit</button>
