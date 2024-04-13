@@ -5,19 +5,17 @@ import 'material-icons/iconfont/material-icons.css';
 
 const Home = () => {
     const[clicked,setclicked]=useState("false")
-    
-    
-const bgColOR=clicked==='false'? 'white' : 'black';
+    const bgColOR=clicked==='false'? 'white' : 'black';
 const textcolor=bgColOR==='white'?'black':'white'
   return (
     <div style={{backgroundColor:bgColOR,  color:textcolor}}>
     <div className='border-solid border border-slate-300 flex justify-between h-16 '>
-        <div className='flex  '>
+        <div className='flex'>
         <div className='border-solid border-r-2 border-slate-300 w-40 ml-3.5  overflow-hidden'><img style={{borderRadius:"100%"}} src="https://st3.depositphotos.com/43745012/44906/i/450/depositphotos_449066958-stock-photo-financial-accounting-logo-financial-logo.jpg" alt="img" className='w-16 ml-8 ' id="App-logo"></img></div> 
        
        <div className='pt-4'><input className='border-solid border-2 border-slate-300 h-8 ml-4 p-4 rounded-3xl'placeholder='search'></input></div> 
         </div>
-        <div className=''>
+        <div >
       
             <ul className='flex gap-6 mr-8 pt-4'>
                 <li className='flex align-middle'><span class="material-icons">

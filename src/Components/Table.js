@@ -43,6 +43,7 @@ const dispatch = useDispatch();
     } 
       
     });
+    console.log(counter)
     const useStyles =({
       table: {
         minWidth: 650,

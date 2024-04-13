@@ -9,7 +9,7 @@ const initialState = {
   
 };
 
-
+console.log(initialState.user[0].user)
 const dataSlice = createSlice({
   name: "user",
   initialState,
@@ -19,7 +19,10 @@ const dataSlice = createSlice({
      console.log(state.color)
     },
     setuser: (state, action) => {
-      
+     
+      state.user[0].user=[...state.user[0].user,{action}]
+
+
     },
     
   },

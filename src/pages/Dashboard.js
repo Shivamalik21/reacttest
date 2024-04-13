@@ -37,11 +37,11 @@ const Dashboard = () => {
 </span></p>
             </div>
         </div>
-        <div className='flex items-center justify-between h-96 border ml-8'>
-            <div id="paichart " >
+        <div className='flex items-center justify-between h-96 border ml-8 p-4'>
+            <div id="paichart " style={{boxShadow:"1px 2px 3px grey"}} >
           <BasicPie/>
             </div>
-            <div id="graph" >
+            <div id="graph" style={{boxShadow:"1px 2px 3px grey"}}>
             <Linechart/>
             </div>
         </div>
