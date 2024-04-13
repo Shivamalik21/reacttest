@@ -1,7 +1,11 @@
-import React from 'react'
+import React, {  useRef } from 'react'
+import { useSelector} from "react-redux";
 
 
 const Newuser = () => {
+  const username=useRef()
+  const age=useRef()
+  const email=useRef()
   
   return (
     <div className='p-8'>
@@ -16,19 +20,25 @@ const Newuser = () => {
 upload_file
 </span></div>
 <div>
-<label for="name">Name</label>
-<input id="name" className='border-b'></input>
+<label  for="name">Name:- </label>
+<input ref={username} id="name" className='border-b' type='text'></input>
 </div>
 <div>
-<label for="Email">Email</label>
-<input id="Email" className='border-b'></input>
+<label for="Email">Email:- </label>
+<input ref={email} id="Email" className='border-b' type='text'></input>
 </div>
 <div>
-<label for="Age">Age</label>
-<input id="Age" className='border-b'></input>
+<label for="Age">Age:- </label>
+<input ref={age} id="Age" className='border-b' type='number'></input>
 
 </div>
-<button style={{border:"1px solid grey", height:"3vw", backgroundColor:"skyblue", color:"green"}}>Submit</button>
+<button style={{border:"1px solid grey", height:"3vw", backgroundColor:"skyblue", color:"green"}} onClick={(()=>{
+ if(username.current.value===""||age.current.value===""||email.current.value===""){
+  alert("fill right input")
+ }else{
+  console.log(username.current.value)
+ }
+})}>Submit</button>
    </div>
    </div>
     </div>
