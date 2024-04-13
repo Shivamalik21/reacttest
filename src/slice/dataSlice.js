@@ -4,7 +4,8 @@ const dt=require("../data.json")
 
 const initialState = {
   user: [dt],
-  color:""
+  color:"",
+  data:[]
   
 };
 
@@ -17,24 +18,16 @@ const dataSlice = createSlice({
      state.color=action.payload;
      console.log(state.color)
     },
-    setTopRated: (state, action) => {
-      state.topRated=action.payload;
+    setuser: (state, action) => {
+      
     },
-    setSearchMovie: (state, action) => {
-      state.searchMovie = action.payload;
-    },
-    setGenres: (state, action) => {
-      state.genres = action.payload;
-    },
-    setSimilar: (state, action) => {
-      state.similar = action.payload;
-    },
+    
   },
 });
 
 // createSlice - > actions , reducer
 
-export const { setcolor, setTopRated, setSearchMovie, setGenres, setSimilar } =
+export const { setcolor, setuser } =
   dataSlice.actions;
 
 export default dataSlice.reducer;
