@@ -9,7 +9,7 @@ const initialState = {
   
 };
 
-localStorage.setItem("data",initialState.user[0].user)
+
 const dataSlice = createSlice({
   name: "user",
   initialState,

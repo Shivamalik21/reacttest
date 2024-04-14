@@ -1,31 +1,43 @@
 import * as React from 'react';
-import { DataGrid} from '@mui/x-data-grid';
-
+import { DataGrid, renderActionsCell} from '@mui/x-data-grid';
+import Box from '@mui/material/Box';
 import { useSelector, useDispatch} from "react-redux";
+import { alignProperty } from '@mui/material/styles/cssUtils';
 
 const columns = [
-  { field: 'id', headerName: 'ID', width: 160 },
-  { field: 'Name', headerName: 'Name', width: 160 },
+  { field: 'id', headerName: 'ID', width: 90 },
+  { field: 'Name', headerName: 'Name', width: 150 },
   { field: 'Email', headerName: 'Email', width: 160 },
   {
-    field: 'age',
+    field: 'Age',
     headerName: 'Age',
     type: 'number',
-    width: 160,
-    colors:'red'
+    width: 110,
+    align:"center",
+    headerAlign: 'center',
   },
   {
     field: 'action',
     headerName: 'Action',
+ width:250,
     
-    width: 200,
-    rendercell:()=>{
-      return(
-        <div style={{width:"20ww ",height:"10vh", border:"1px solid green"}}>
-      <button></button>
-      </div>
-      )
-    }
+     align:"center",
+    headerAlign: 'center',
+    zindex:"1",
+   renderCell:()=>{
+    return(
+      <div style={{width:"10vw", marginLeft:"3vw"}}>
+<button style={{border:"1px dotted blue ",marginRight:"2vw", height:"3.5vw", width:"4vw"}} onClick={()=>{
+  console.log("shiva")
+}}>
+  View
+</button>
+<button style={{border:"1px dotted red", height:"3.5vw", width:"6vw"}}>
+  Remove
+</button>
+</div>
+    )
+   }
    
   }
   
@@ -35,25 +47,21 @@ const columns = [
 
 
 export default function DataTable() {
+ 
   const counter = useSelector((state) => state.dataSlice);
 const dispatch = useDispatch();
  const rows=counter.user[0].user.map((e,index)=>{
-    return{ id:index , Name: e.name, Email: e.email, age: e.age, 
-    
-    } 
+    return{ id:index , Name: e.name, Email: e.email, Age: e.age, 
+     
+      } 
       
     });
-    console.log(counter)
-    const useStyles =({
-      table: {
-        minWidth: 650,
-        fontSize: 20,
-        color: 'red',
-      },})
+   
+  
   return (
-    <div style={{ height: 400, width: '72vw', }}>
+    <Box sx={{ height: 400, width: '70vw'   }}>
       <DataGrid
-      classes={useStyles.table}
+       
         rows={rows}
         columns={columns}
         initialState={{
@@ -66,6 +74,6 @@ const dispatch = useDispatch();
         
         
       />
-    </div>
+    </Box>
   );
 }

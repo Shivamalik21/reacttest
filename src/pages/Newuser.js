@@ -4,6 +4,7 @@ import { setuser } from '../slice/dataSlice';
 
 
 const Newuser = () => {
+  
    const[img,setimg]=useState()
   const dispatch=useDispatch()
   const username=useRef()
@@ -47,7 +48,9 @@ upload_file
    dispatch(setuser({name:username.current.value,
     email:email.current.value,
     age:age.current.value,
+   
   }))
+  alert("data Added to user")
  }
 })}>Submit</button>
    </div>
