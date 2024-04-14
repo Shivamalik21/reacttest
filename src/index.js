@@ -7,6 +7,7 @@ import { createBrowserRouter,RouterProvider } from 'react-router-dom';
 import Dashboard from './pages/Dashboard';
 import User from './pages/User';
 import Newuser from './pages/Newuser';
+import Details from './pages/details';
 
 const router=createBrowserRouter([{
   path:"/",
@@ -22,6 +23,9 @@ element:<Dashboard/>
     {
       path:"/newuser",
       element:<Newuser/>
+    }, {
+      path:"/details",
+      element:<Details/>
     }
   ]
 }])
