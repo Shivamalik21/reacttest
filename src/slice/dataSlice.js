@@ -21,16 +21,19 @@ const dataSlice = createSlice({
     setuser: (state, action) => {
      
      state.user[0].user.unshift(action.payload)
-console.log(action.payload)
-console.log(state.data)
+
+
     },
+    setremove:(state,action)=>{
+      state.user[0].user=action.payload
+      },
     
   },
 });
 
 // createSlice - > actions , reducer
 
-export const { setcolor, setuser } =
+export const { setcolor, setuser,setremove } =
   dataSlice.actions;
 
 export default dataSlice.reducer;
