@@ -45,9 +45,9 @@ upload_file
  if(username.current.value===""||age.current.value===""||email.current.value===""){
   alert("fill right input")
  }else{
-   dispatch(setuser({name:username.current.value,
-    email:email.current.value,
-    age:age.current.value,
+   dispatch(setuser({Name:username.current.value,
+    Email:email.current.value,
+    Age:age.current.value,
    
   }))
   alert("data Added to user")
