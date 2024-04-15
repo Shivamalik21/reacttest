@@ -2,7 +2,7 @@ import * as React from 'react';
 import { DataGrid} from '@mui/x-data-grid';
 import Box from '@mui/material/Box';
 import { useSelector, useDispatch} from "react-redux";
-import { setremove} from '../slice/dataSlice';
+import { setremove,setdata} from '../slice/dataSlice';
 import { NavLink } from 'react-router-dom';
 
 
@@ -46,7 +46,9 @@ export default function DataTable() {
          
         return(
           <div style={{width:"10vw", marginLeft:"3vw"}}>
-    <NavLink to="/details"><button style={{border:"1px dotted blue ",marginRight:"2vw", height:"3.5vw", width:"4vw"}} >
+    <NavLink to="/details"><button style={{border:"1px dotted blue ",marginRight:"2vw", height:"3.5vw", width:"4vw"}} onClick={(()=>{
+      dispatch(setdata(rows.filter((row) => row.id=== param.row.id)));
+    })} >
       View
     </button></NavLink>
     <button style={{border:"1px dotted red", height:"3.5vw", width:"6vw"}} onClick={((e)=>{

@@ -26,14 +26,19 @@ const dataSlice = createSlice({
     },
     setremove:(state,action)=>{
       state.user[0].user=action.payload
-      },
+      
+      },setdata:(state,action)=>{
+        state.data=action.payload
+        
+        
+        }
     
   },
 });
 
 // createSlice - > actions , reducer
 
-export const { setcolor, setuser,setremove } =
+export const { setcolor, setuser,setremove,setdata } =
   dataSlice.actions;
 
 export default dataSlice.reducer;
